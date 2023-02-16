@@ -1,0 +1,5 @@
+java_binary(
+    name = "kn",
+    main_class = "de.philwo.kunoichi.Main",
+    runtime_deps = ["//src/main/java/de/philwo/kunoichi"],
+)

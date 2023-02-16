@@ -1,0 +1,9 @@
+java_library(
+    name = "kunoichi",
+    srcs = glob(["**/*.java"]),
+    visibility = [
+        "//:__pkg__",
+        "//src/test/java/de/philwo/kunoichi:__subpackages__",
+    ],
+    deps = ["//third_party:picocli"],
+)

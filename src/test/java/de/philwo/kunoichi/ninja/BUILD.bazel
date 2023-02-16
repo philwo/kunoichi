@@ -1,0 +1,45 @@
+load("@contrib_rules_jvm//java:defs.bzl", "java_junit5_test")
+
+java_library(
+    name = "ninja",
+    srcs = glob(["**/*.java"]),
+    deps = [
+        "//src/main/java/de/philwo/kunoichi",
+        "//third_party:junit5",
+    ],
+)
+
+java_junit5_test(
+    name = "NinjaFileLexerTest",
+    size = "small",
+    runtime_deps = [":ninja"],
+    test_class = "de.philwo.kunoichi.ninja.NinjaFileLexerTest",
+)
+
+java_junit5_test(
+    name = "NinjaFileParserTest",
+    size = "small",
+    runtime_deps = [":ninja"],
+    test_class = "de.philwo.kunoichi.ninja.NinjaFileParserTest",
+)
+
+java_junit5_test(
+    name = "NinjaTargetParserTest",
+    size = "small",
+    runtime_deps = [":ninja"],
+    test_class = "de.philwo.kunoichi.ninja.NinjaTargetParserTest",
+)
+
+java_junit5_test(
+    name = "NinjaTokenTest",
+    size = "small",
+    runtime_deps = [":ninja"],
+    test_class = "de.philwo.kunoichi.ninja.NinjaTokenTest",
+)
+
+java_junit5_test(
+    name = "PoolParserTest",
+    size = "small",
+    runtime_deps = [":ninja"],
+    test_class = "de.philwo.kunoichi.ninja.PoolParserTest",
+)

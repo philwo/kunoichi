@@ -1,0 +1,21 @@
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+### Bazel ###
+bazel-bin
+bazel-kunoichi
+bazel-out
+bazel-testlogs
+

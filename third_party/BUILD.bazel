@@ -1,0 +1,29 @@
+java_import(
+    name = "picocli",
+    jars = glob(["picocli/*.jar"]),
+    visibility = [
+        "//src/main/java/de/philwo/kunoichi:__subpackages__",
+    ],
+)
+
+java_import(
+    name = "junit5",
+    jars = glob(["junit5/*.jar"]),
+    visibility = [
+        "//src/test/java/de/philwo/kunoichi:__subpackages__",
+    ],
+    deps = [
+        ":apiguardian",
+        ":opentest4j",
+    ],
+)
+
+java_import(
+    name = "apiguardian",
+    jars = glob(["apiguardian/*.jar"]),
+)
+
+java_import(
+    name = "opentest4j",
+    jars = glob(["opentest4j/*.jar"]),
+)

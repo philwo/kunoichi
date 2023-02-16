@@ -1,0 +1,22 @@
+load("@contrib_rules_jvm//java:defs.bzl", "java_junit5_test")
+
+java_library(
+    name = "datamodel",
+    srcs = glob(["**/*.java"]),
+    deps = [
+        "//src/main/java/de/philwo/kunoichi",
+        "//third_party:junit5",
+    ],
+)
+
+java_junit5_test(
+    name = "EnvironmentTest",
+    runtime_deps = [":datamodel"],
+    test_class = "de.philwo.kunoichi.datamodel.EnvironmentTest",
+)
+
+java_junit5_test(
+    name = "RuleTest",
+    runtime_deps = [":datamodel"],
+    test_class = "de.philwo.kunoichi.datamodel.RuleTest",
+)
